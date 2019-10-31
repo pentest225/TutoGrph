@@ -7,5 +7,5 @@ from . import models
 
 class PoputlationsAdmin(admin.ModelAdmin):
     
-    list_display=('nom','nombreHabitant')
+    list_display=('nom','nombreHabitant','poucentage','max')
     
