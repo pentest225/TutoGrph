@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,57 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="echarts.min.js"></script>
-    <title>Document</title>
+    <script src="static/echarts.min.js"></script>
+    <title>Stat poputaltion</title>
 </head>
 <body>
-    <div class="container">
-            <h1 class="text-center p-4" >ECHARTS JS</h1>
-            <hr>
+    <div class="container ">
+        
+        <h1 class="text-center jumbotron">
+            Statistique de la populations de Cote D'ivoir
+        </h1>
+        <div class="contaiter">
             <div class="row">
                 <div class="col-md-6">
-                    <div id="main" style="width:100%; height:400px;"></div>
+                        <table class="table">
+                                <thead>
+                                    <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                                </table>
                 </div>
                 <div class="col-md-6">
                         <div id="mainlong" style="width:100%; height:400px;"></div>
                 </div>
             </div>
-            <hr>
-            <div class="contai">
-                    <div class="col-md-6">
-                            <div id="goth" style="width:100%; height:400px;"></div>
-                    </div>
-            </div>
+        </div>
     </div>
+    
 </body>
 <script type="text/javascript">
     // based on prepared DOM, initialize echarts instance
-    var myChart = echarts.init(document.getElementById('main'));
     var mypieLang = echarts.init(document.getElementById('mainlong'));
-    var myGoht = echarts.init(document.getElementById('goth'));
 
     // specify chart configuration item and data
-    var option = {
-        title: {
-            text: 'ECharts entry example'
-        },
-        tooltip: {},
-        legend: {
-            data:['Sales']
-        },
-        xAxis: {
-            data: ["shirt","cardign","chiffon shirt","pants","heels","socks"]
-        },
-        yAxis: {},
-        series: [{
-            name: 'Sales',
-            type: 'line',
-            data: [5, 20, 36, 10, 10, 20]
-        }]
-    };
-
-    
-    
     optionLang = {
         title : {
             text: 'population  ',
@@ -96,38 +102,11 @@
     };
     //option 
 
-    var optionGoth = {
-        title:{
-            text:"Liste des candidat ",
-            x:'center',
-        },
-        tooltip : {
-            formatter: "{a} <br/>{b} : {c}%"
-        },
-        toolbox: {
-            feature: {
-                restore: {},
-                saveAsImage: {}
-            }
-        },
-        series: [
-            {
-                name: 'Nombre de candidat en ling ',
-                type: 'gauge',
-                detail: {formatter:'{value}%'},
-                data: [{value: 50, name: 'En ligne'}]
-            }
-        ]
-    };
-    setInterval(function () {
-        optionGoth.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
-        myGoht.setOption(optionGoth, true);
-    },2000);
 
+   
+   
 
     // use configuration item and data specified to show chart
-    myChart.setOption(option);
     mypieLang.setOption(optionLang);
-    myGoht.setOption(optionGoth);
 </script>
 </html>
